@@ -18,6 +18,7 @@
                 <i class="fas fa-heartbeat"></i> Diabetes AI
             </div>
             <ul class="nav-menu">
+                <li><a href="#slideshow" class="nav-link">Gallery</a></li>
                 <li><a href="#overview" class="nav-link">Overview</a></li>
                 <li><a href="#dataset" class="nav-link">Dataset</a></li>
                 <li><a href="#visualizations" class="nav-link">Visualizations</a></li>
@@ -45,6 +46,113 @@
             </div>
         </div>
     </header>
+
+    <!-- Diabetes Awareness Slideshow -->
+    <section id="slideshow" class="slideshow-section">
+        <div class="container">
+            <h2 class="section-title">🩺 Understanding Diabetes</h2>
+            <p class="section-subtitle">Learn about diabetes through visual insights</p>
+
+            <div class="slideshow-container">
+                <!-- Slides -->
+                <div class="slide fade active">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=80"
+                        alt="Blood Glucose Testing">
+                    <div class="slide-caption">
+                        <h3>Blood Glucose Monitoring</h3>
+                        <p>Regular blood sugar testing is crucial for diabetes management</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80"
+                        alt="Medical Research">
+                    <div class="slide-caption">
+                        <h3>Medical Research & AI</h3>
+                        <p>Machine learning is revolutionizing diabetes prediction and care</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80"
+                        alt="Healthcare Technology">
+                    <div class="slide-caption">
+                        <h3>Healthcare Technology</h3>
+                        <p>Advanced technology enables early detection and prevention</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80"
+                        alt="Healthy Lifestyle">
+                    <div class="slide-caption">
+                        <h3>Healthy Lifestyle Choices</h3>
+                        <p>Diet and exercise play a key role in diabetes prevention</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80"
+                        alt="Doctor Consultation">
+                    <div class="slide-caption">
+                        <h3>Professional Healthcare</h3>
+                        <p>Regular check-ups and medical guidance are essential</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80"
+                        alt="Insulin Pen">
+                    <div class="slide-caption">
+                        <h3>Insulin Management</h3>
+                        <p>Modern insulin delivery systems improve quality of life</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?w=800&q=80"
+                        alt="Data Analysis">
+                    <div class="slide-caption">
+                        <h3>Data-Driven Predictions</h3>
+                        <p>Our ML model analyzes clinical data to predict diabetes risk</p>
+                    </div>
+                </div>
+
+                <div class="slide fade">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=80" alt="Heart Health">
+                    <div class="slide-caption">
+                        <h3>Overall Health Impact</h3>
+                        <p>Diabetes affects multiple organ systems - early detection saves lives</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="slide-arrow prev" onclick="changeSlide(-1)">❮</button>
+                <button class="slide-arrow next" onclick="changeSlide(1)">❯</button>
+                <!-- Progress bar (updates while autoplaying) -->
+                <div id="slideProgress" class="slide-progress"></div>
+            </div>
+
+            <!-- Slide Indicators -->
+            <div class="slide-indicators">
+                <span class="indicator active" onclick="goToSlide(0)"></span>
+                <span class="indicator" onclick="goToSlide(1)"></span>
+                <span class="indicator" onclick="goToSlide(2)"></span>
+                <span class="indicator" onclick="goToSlide(3)"></span>
+                <span class="indicator" onclick="goToSlide(4)"></span>
+                <span class="indicator" onclick="goToSlide(5)"></span>
+                <span class="indicator" onclick="goToSlide(6)"></span>
+                <span class="indicator" onclick="goToSlide(7)"></span>
+            </div>
+
+            <!-- Slideshow Controls -->
+            <div class="slideshow-controls">
+                <button class="control-btn" onclick="toggleAutoPlay()" id="autoPlayBtn">
+                    <i class="fas fa-pause"></i> Pause
+                </button>
+            </div>
+        </div>
+    </section>
 
     <main>
         <!-- Overview Section -->
@@ -579,6 +687,198 @@
                 console.log('Live demo link will be updated when Streamlit app is deployed');
             });
         }
+
+        // ============================================
+        // DIABETES SLIDESHOW FUNCTIONALITY (Enhanced)
+        // - Dynamic indicators
+        // - Pause keeps the current slide visible
+        // - Progress bar while autoplaying
+        // - Touch, keyboard, hover support
+        // ============================================
+
+        let currentSlide = 0;
+        let isAutoPlaying = true;
+        let slideInterval = null;
+        let progressInterval = null;
+        const SLIDE_DURATION = 4000; // ms
+        const TICK = 50; // ms for progress updates
+
+        const slides = document.querySelectorAll('.slide');
+        const indicatorsContainer = document.querySelector('.slide-indicators');
+        const autoPlayBtn = document.getElementById('autoPlayBtn');
+        const slideProgress = document.getElementById('slideProgress');
+        const slideshowContainer = document.querySelector('.slideshow-container');
+
+        // Build indicators dynamically if not matching slide count
+        function buildIndicators() {
+            if (!indicatorsContainer) return;
+            indicatorsContainer.innerHTML = '';
+            slides.forEach((_, i) => {
+                const span = document.createElement('span');
+                span.className = 'indicator' + (i === 0 ? ' active' : '');
+                span.setAttribute('data-index', i);
+                span.addEventListener('click', () => goToSlide(i));
+                indicatorsContainer.appendChild(span);
+            });
+        }
+
+        // Initialize slideshow
+        function initSlideshow() {
+            if (!slides || slides.length === 0) return;
+            buildIndicators();
+            showSlide(0);
+            if (isAutoPlaying) startAutoPlay();
+        }
+
+        function getIndicators() {
+            return document.querySelectorAll('.indicator');
+        }
+
+        // Show specific slide
+        function showSlide(index) {
+            // Handle wrap around
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+
+            currentSlide = index;
+
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+
+            // Remove active from all indicators
+            getIndicators().forEach(ind => ind.classList.remove('active'));
+
+            // Show current slide and activate indicator
+            slides[currentSlide].classList.add('active');
+            const inds = getIndicators();
+            if (inds[currentSlide]) inds[currentSlide].classList.add('active');
+
+            // Reset and restart progress if autoplaying
+            resetProgress();
+        }
+
+        // Change slide by delta (+1 or -1)
+        function changeSlide(delta) {
+            showSlide(currentSlide + delta);
+            // Reset auto-play timer when manually changing
+            if (isAutoPlaying) {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            showSlide(index);
+            // Reset auto-play timer
+            if (isAutoPlaying) {
+                stopAutoPlay();
+                startAutoPlay();
+            }
+        }
+
+        // Progress bar helpers
+        function resetProgress() {
+            if (!slideProgress) return;
+            slideProgress.style.width = '0%';
+        }
+
+        function startProgress() {
+            if (!slideProgress) return;
+            clearInterval(progressInterval);
+            let elapsed = 0;
+            slideProgress.style.width = '0%';
+            progressInterval = setInterval(() => {
+                if (!isAutoPlaying) return; // freeze progress when paused
+                elapsed += TICK;
+                const pct = Math.min(100, (elapsed / SLIDE_DURATION) * 100);
+                slideProgress.style.width = pct + '%';
+                if (pct >= 100) {
+                    // will be handled by slideInterval; keep it safe here too
+                    elapsed = 0;
+                }
+            }, TICK);
+        }
+
+        // Auto-play functionality
+        function startAutoPlay() {
+            if (!isAutoPlaying) return;
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, SLIDE_DURATION); // Change slide every SLIDE_DURATION
+            startProgress();
+            if (autoPlayBtn) autoPlayBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        }
+
+        function stopAutoPlay() {
+            clearInterval(slideInterval);
+            clearInterval(progressInterval);
+            if (autoPlayBtn) autoPlayBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+        }
+
+        function toggleAutoPlay() {
+            isAutoPlaying = !isAutoPlaying;
+            if (isAutoPlaying) {
+                startAutoPlay();
+            } else {
+                // Keep showing current slide but stop timers
+                stopAutoPlay();
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (e.key === 'ArrowRight') {
+                changeSlide(1);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoPlay();
+            }
+        });
+
+        // Pause on hover (does not change the paused state permanently)
+        if (slideshowContainer) {
+            slideshowContainer.addEventListener('mouseenter', () => {
+                if (isAutoPlaying) stopAutoPlay();
+            });
+
+            slideshowContainer.addEventListener('mouseleave', () => {
+                if (isAutoPlaying) startAutoPlay();
+            });
+        }
+
+        // Touch/Swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        if (slideshowContainer) {
+            slideshowContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            slideshowContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+        }
+
+        // Initialize when DOM is ready
+        initSlideshow();
     </script>
 </body>
 
