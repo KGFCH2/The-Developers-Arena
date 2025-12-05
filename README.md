@@ -16,6 +16,7 @@ Welcome to my comprehensive 6-month Data Science journey under The Developers Ar
 - [How to Use This Repository](#how-to-use-this-repository)
 - [License](#license)
 
+<a id="about-me"></a>
 ## 👤 About Me
 **Name:** Babin Bid  
 **Email:** babinbid05@gmail.com  
@@ -24,10 +25,12 @@ Welcome to my comprehensive 6-month Data Science journey under The Developers Ar
 
 Aspiring Data Scientist with a passion for machine learning, deep learning, and building impactful data-driven solutions.
 
+<a id="project-overview"></a>
 ## 📊 Project Overview
 This repository documents my 6-month intensive data science training program. Each part represents a month of focused learning and hands-on projects, building skills progressively from foundational Python programming to advanced AI techniques and full-stack deployment.
 
-## PART 1: Month 1 – Python Basics and Data Manipulation
+<a id="part-1-month-1-python-basics-and-data-manipulation"></a>
+## 🐍 PART 1: Month 1 – Python Basics and Data Manipulation
 **Link:** [PART 1](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%201)
 
 **Objectives:**
@@ -60,7 +63,8 @@ This repository documents my 6-month intensive data science training program. Ea
    - Client Project: Dashboard for visualizing feature relationships (e.g., scatter plots, histograms).
    - Deliverables: Python script, plots, and concepts summary.
 
-## PART 2: Month 2 – Data Analysis and Statistical Methods
+<a id="part-2-month-2-data-analysis-and-statistical-methods"></a>
+## 📈 PART 2: Month 2 – Data Analysis and Statistical Methods
 **Link:** [PART 2](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%202)
 
 **Objectives:**
@@ -92,7 +96,8 @@ This repository documents my 6-month intensive data science training program. Ea
    - Client Project: Model tuning for improved performance.
    - Deliverables: Python script, evaluation metrics, and concepts summary.
 
-## PART 3: Month 3 – Advanced Machine Learning
+<a id="part-3-month-3-advanced-machine-learning"></a>
+## 🤖 PART 3: Month 3 – Advanced Machine Learning
 **Link:** [PART 3](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%203)
 
 **Objectives:**
@@ -118,7 +123,8 @@ This repository documents my 6-month intensive data science training program. Ea
    - Client Project: Neural network for image classification (e.g., MNIST dataset).
    - Deliverables: Python script, model, and concepts summary.
 
-## PART 4: Month 4 – Advanced Deep Learning and NLP
+<a id="part-4-month-4-advanced-deep-learning-and-nlp"></a>
+## 🧠 PART 4: Month 4 – Advanced Deep Learning and NLP
 **Link:** [PART 4](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%204)
 
 **Objectives:**
@@ -138,7 +144,8 @@ This repository documents my 6-month intensive data science training program. Ea
    - Client Project: RNN/LSTM for time series prediction (e.g., stock prices).
    - Deliverables: Python script, model results, and summary.
 
-## PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development
+<a id="part-5-6-month-5-6-final-project-and-portfolio-development"></a>
+## 🚀 PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development
 **Link:** [PART 5 - 6](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%205%20-%206)
 
 **Objectives:**
