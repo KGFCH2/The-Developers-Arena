@@ -1,5 +1,6 @@
 # app/api.py
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import joblib
 import pandas as pd
@@ -7,6 +8,15 @@ import os
 
 MODEL_PATH = "models/final_model.joblib"
 app = FastAPI(title="Diabetes Prediction API")
+
+# Enable CORS for frontend integration
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Global model variable
 model = None
@@ -87,6 +97,10 @@ def predict(payload: PredictIn):
         return {"error": str(e), "status": "Model not available"}
     
     df = pd.DataFrame([payload.dict()])
+    
+    # Add engineered feature (must match training data)
+    df["BMI_age_ratio"] = df["BMI"] / (df["Age"] + 1e-6)
+    
     pred = model_instance.predict(df)[0]
     prob = model_instance.predict_proba(df)[0,1] if hasattr(model_instance, "predict_proba") else None
     return {
