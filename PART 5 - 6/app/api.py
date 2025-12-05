@@ -6,7 +6,7 @@ import joblib
 import pandas as pd
 import os
 
-MODEL_PATH = "models/final_model.joblib"
+MODEL_PATH = "../models/final_model.joblib"
 app = FastAPI(title="Diabetes Prediction API")
 
 # Enable CORS for frontend integration

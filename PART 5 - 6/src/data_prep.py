@@ -8,7 +8,7 @@ TARGET = "Outcome"
 
 MISSING_AS_ZERO = ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]
 
-def load_data(path="data/raw/diabetes.csv"):
+def load_data(path="../data/raw/diabetes.csv"):
     df = pd.read_csv(path)
     return df
 
@@ -27,7 +27,7 @@ def clean_and_feature_engineer(df):
     # Ensure consistent dtypes
     return df
 
-def split_save(df, out_dir="data/processed", test_size=0.2, random_state=42):
+def split_save(df, out_dir="../data/processed", test_size=0.2, random_state=42):
     os.makedirs(out_dir, exist_ok=True)
     # Drop rows with NaN in target variable
     df = df.dropna(subset=[TARGET])

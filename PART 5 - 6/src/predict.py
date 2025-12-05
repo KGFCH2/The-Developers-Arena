@@ -2,7 +2,7 @@
 import joblib
 import pandas as pd
 import sys
-def predict_csv(model_path, input_csv, out_csv="data/processed/predictions.csv"):
+def predict_csv(model_path, input_csv, out_csv="../data/processed/predictions.csv"):
     model = joblib.load(model_path)
     df = pd.read_csv(input_csv)
     
@@ -20,6 +20,6 @@ def predict_csv(model_path, input_csv, out_csv="data/processed/predictions.csv")
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("usage: python src/predict.py models/final_model.joblib data/processed/some_input.csv")
+        print("usage: python src/predict.py ../models/final_model.joblib ../data/processed/some_input.csv")
     else:
         predict_csv(sys.argv[1], sys.argv[2])

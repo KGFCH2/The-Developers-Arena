@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
 
 TARGET = "Outcome"
 
-def evaluate(model_path="models/final_model.joblib", test_path="data/processed/test.csv", save_plots=True):
+def evaluate(model_path="../models/final_model.joblib", test_path="../data/processed/test.csv", save_plots=True):
     model = joblib.load(model_path)
     df = pd.read_csv(test_path)
     # Drop rows with any NaN values
@@ -111,8 +111,8 @@ def evaluate(model_path="models/final_model.joblib", test_path="data/processed/t
         ax6.set_xlabel('Predicted Label')
         
         plt.tight_layout()
-        plt.savefig('models/evaluation_report.png', dpi=300, bbox_inches='tight')
-        print("\n✅ Evaluation report saved to: models/evaluation_report.png")
+        plt.savefig('../models/evaluation_report.png', dpi=300, bbox_inches='tight')
+        print("\n✅ Evaluation report saved to: ../models/evaluation_report.png")
         plt.show()
 
 if __name__ == "__main__":

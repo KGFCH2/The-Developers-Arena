@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 TARGET = "Outcome"
 
-def create_prediction_visualization(X_sample, predictions, probabilities=None, save_path="models/prediction_viz.png"):
+def create_prediction_visualization(X_sample, predictions, probabilities=None, save_path="../models/prediction_viz.png"):
     """
     Create visualization for individual predictions
     """
@@ -43,7 +43,7 @@ def create_prediction_visualization(X_sample, predictions, probabilities=None, s
     print(f"✅ Prediction visualization saved to: {save_path}")
     return fig
 
-def create_feature_importance_viz(model, feature_names, save_path="models/feature_importance.png"):
+def create_feature_importance_viz(model, feature_names, save_path="../models/feature_importance.png"):
     """
     Create feature importance visualization
     """
@@ -80,7 +80,7 @@ def create_feature_importance_viz(model, feature_names, save_path="models/featur
     print(f"✅ Feature importance saved to: {save_path}")
     return fig
 
-def create_data_distribution_viz(df, target_col=TARGET, save_path="models/data_distribution.png"):
+def create_data_distribution_viz(df, target_col=TARGET, save_path="../models/data_distribution.png"):
     """
     Create data distribution visualization
     """
@@ -118,8 +118,8 @@ if __name__ == "__main__":
     print("Generating visualizations...")
     
     # Load model and data
-    model = joblib.load("models/final_model.joblib")
-    df = pd.read_csv("data/processed/test.csv")
+    model = joblib.load("../models/final_model.joblib")
+    df = pd.read_csv("../data/processed/test.csv")
     df = df.dropna()
     
     X = df.drop(columns=[TARGET])
