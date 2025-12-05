@@ -155,6 +155,7 @@ This repository documents my 6-month intensive data science training program. Ea
    - Deliverables: Deployed model link (e.g., Heroku or AWS), portfolio website, and GitHub repository.
    - Portfolio: Online portfolio showcasing all projects with write-ups and GitHub links.
 
+<a id="technologies-used"></a>
 ## 🛠 Technologies Used
 - **Programming Languages:** Python
 - **Data Manipulation:** NumPy, Pandas
@@ -185,6 +186,7 @@ This repository documents my 6-month intensive data science training program. Ea
    - Feel free to fork and contribute improvements!
    - Open issues for any questions or suggestions.
 
+<a id="license"></a>
 ## 📄 License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
