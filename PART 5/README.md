@@ -1,116 +1,148 @@
-<h1 align="center">Hi 👋, I'm Babin Bid</h1>
+# 🏥 Diabetes Prediction ML Project
+
+> **Predict diabetes risk instantly using Machine Learning**
+
+| Metric | Value |
+|--------|-------|
+| **Accuracy** | 85.45% |
+| **Algorithm** | Random Forest |
+| **Status** | ✅ Ready to Use |
+
+---
+
+## ⚡ Quick Start
+
+```bash
+# Step 1: Install dependencies
+pip install -r requirements.txt
+
+# Step 2: Prepare data
+python src/data_prep.py
+
+# Step 3: Train the model
+python src/train.py
+
+# Step 4: Launch web app
+python -m streamlit run app/streamlit_app.py
+```
+
+🎉 **Open http://localhost:8501** - Enter patient data and get predictions!
+
+---
+
+## 🚀 Two Ways to Use
+
+### 1️⃣ Streamlit Web App (Easiest!)
+```bash
+python -m streamlit run app/streamlit_app.py
+```
+→ Opens at **http://localhost:8501**
+
+### 2️⃣ REST API
+```bash
+python -m uvicorn app.api:app --reload
+```
+→ API Docs at **http://localhost:8000/docs**
+
+---
+
+## 📁 Project Structure
+
+```
+PART 5/
+├── src/                      ← Python Scripts
+│   ├── data_prep.py          → Prepare & clean data
+│   ├── train.py              → Train ML model
+│   ├── evaluate.py           → Evaluate model
+│   ├── predict.py            → Batch predictions
+│   └── visualize_results.py  → Generate charts
+│
+├── app/                      ← Web Applications
+│   ├── api.py                → FastAPI backend
+│   └── streamlit_app.py      → Interactive web UI
+│
+├── portfolio/                ← Frontend Website
+│   ├── index.html            → Main showcase page
+│   └── style.css             → Styling
+│
+├── data/                     ← Data Files
+│   ├── raw/diabetes.csv      → Original dataset
+│   └── processed/            → Train/test splits
+│
+├── models/                   ← Trained Model & Charts
+│   ├── final_model.joblib    → Trained model
+│   └── *.png                 → Evaluation visualizations
+│
+└── Documentation
+    ├── README.md             → Project overview
+    ├── INSTRUCTIONS.md       → Detailed guide
+    └── SETUP_GUIDE.md        → Troubleshooting
+```
+
+---
+
+## 📋 Run All Programs
+
+| Step | Command | Output | Time |
+|------|---------|--------|------|
+| 1 | `python src/data_prep.py` | train.csv, test.csv | 2s |
+| 2 | `python src/train.py` | final_model.joblib | 30s |
+| 3 | `python src/evaluate.py` | evaluation_report.png | 5s |
+| 4 | `python src/visualize_results.py` | 3 PNG charts | 5s |
+| 5 | `python src/predict.py models/final_model.joblib data/processed/test.csv` | predictions.csv | 2s |
+
+---
+
+## 🔧 Input Features
+
+| Feature | Description | Range |
+|---------|-------------|-------|
+| Pregnancies | Number of pregnancies | 0-17 |
+| Glucose | Blood glucose (mg/dL) | 0-199 |
+| BloodPressure | Blood pressure (mm Hg) | 0-122 |
+| SkinThickness | Skin fold thickness (mm) | 0-99 |
+| Insulin | Insulin level (μU/ml) | 0-846 |
+| BMI | Body Mass Index | 0-67 |
+| DiabetesPedigreeFunction | Family history score | 0.08-2.42 |
+| Age | Age in years | 21-81 |
+
+---
+
+## ❓ Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `ModuleNotFoundError` | `pip install -r requirements.txt` |
+| `Model file not found` | `python src/train.py` |
+| Port 8501 in use | `--server.port 8502` |
+| Port 8000 in use | `--port 8001` |
+
+---
+
+## ✅ Verified Working
+
+| Component | Status |
+|-----------|--------|
+| Data Preparation | ✅ Working |
+| Model Training | ✅ 85.45% Accuracy |
+| Model Evaluation | ✅ Working |
+| Batch Predictions | ✅ Working |
+| Visualizations | ✅ 4 PNG files generated |
+| Streamlit App | ✅ Working |
+| FastAPI Backend | ✅ Working |
+| Portfolio Website | ✅ Working |
+
+---
+
+## 👤 Author
+
+**Babin Bid**  
+📧 babinbid05@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/babin-bid-853728293/) | [GitHub](https://github.com/KGFCH2)
+
+---
 
 <p align="center">
-  <img src="https://miro.medium.com/1*0N8CVKix7OGfBDsgh9DzrQ.gif" width="500" alt="Coding Boy GIF" />
+  <b>✅ ML Application Ready!</b><br>
+  <i>Last Updated: December 5, 2025</i>
 </p>
-
-<h3 align="center">💻 Computer Science Engineer | 📊 Learning Data Science & Web Development | 🧩 Problem Solver</h3>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/babin-bid-853728293/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
-  </a>
-  <a href="mailto:babinbid05@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
-  </a>
-  <a href="https://github.com/KGFCH2">
-    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
-  </a>
-</p>
-
----
-
-### 🧠 About Me
-I am a passionate **Data Science learner** building strong foundations in Python, machine learning, and deep learning. I love solving real-world problems through **hands-on projects** and client-based tasks.  
-
-**Interests:**  
-💻 Programming | 📊 Data Analysis | 🤖 Machine Learning | 🧩 Problem Solving | 🌐 Web Development | 🔬 Research  
-
----
-
-### 🌟 Data Science Journey (6-Month Curriculum)
-
-Welcome to my Data Science journey! This repository documents my 6-month learning path, from Python fundamentals to advanced machine learning and deep learning. It contains all my learning materials, hands-on projects, and client-based tasks.
-
----
-
-### 📚 Objective
-> To build a strong foundation in data science by mastering Python programming, data manipulation, statistical analysis, machine learning, and deep learning through hands-on projects and real-world applications.
-
----
-
-### 🗓 Month 1 – Python Basics & Data Manipulation
-- **Week 1:** 🐍 Python basics, loops, conditionals, simple projects  
-- **Week 2:** 📚 Data structures, functions, recursion  
-- **Week 3:** 🔢 NumPy & Pandas for data manipulation  
-- **Week 4:** 📊 Data visualization using Matplotlib & Seaborn  
-
-### 🗓 Month 2 – Data Analysis & Statistics
-- **Week 5:** 🔍 Exploratory Data Analysis (EDA)  
-- **Week 6:** 🎲 Probability, statistical testing  
-- **Week 7:** 🤖 Introduction to Machine Learning (ML)  
-- **Week 8:** 🎯 Model evaluation & hyperparameter tuning  
-
-### 🗓 Month 3 – Advanced Machine Learning
-- **Week 9:** 🌲 Advanced supervised learning (Random Forest, XGBoost)  
-- **Week 10:** 🧩 Clustering & unsupervised learning (K-means, PCA)  
-- **Week 11:** 🧠 Introduction to deep learning (Keras, TensorFlow)
-
-> Each week includes hands-on projects, client-based tasks, visual outputs, and scripts.
-
----
-
-### 🛠️ Tech Stack
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Matplotlib-D14836?style=for-the-badge&logo=matplotlib&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=seaborn&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white"/>
-</p>
-
----
-
-### 📂 Projects & Hands-On Tasks
-<div align="center">
-
-| Month | Focus | Key Projects |
-|-------|-------|--------------|
-| Month 1 | 🐍 Python Basics | 🔢 Calculator, 🌡️ Temperature Converter |
-| Month 1 | 🔢 Data Manipulation | 📐 NumPy Array Operations, 📊 Pandas Aggregation |
-| Month 1 | 📊 Visualization | 📈 Dashboard with Matplotlib & Seaborn |
-| Month 2 | 🔍 EDA & Stats | 📊 Descriptive Analysis, 🧪 Hypothesis Testing |
-| Month 2 | 🤖 Machine Learning | 🏘️ Linear Regression, 📈 Client Prediction Model |
-| Month 3 | 🌲 Advanced ML | 🌳 Random Forest, ⚡ XGBoost, 🧾 Customer Churn |
-| Month 3 | 🧠 Deep Learning | 🖼️ MNIST Image Classification, 🧠 Neural Networks |
-
-</div>
-
----
-
-### 📈 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=KGFCH2&show_icons=true&theme=radical" alt="GitHub Stats"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=KGFCH2&theme=radical" alt="GitHub Streak"/>
-</p>
-
----
-
-### 💬 Connect with Me
-<p align="center">
-  🔗 <a href="https://www.linkedin.com/in/babin-bid-853728293/">LinkedIn</a> | ✉️ <a href="mailto:babinbid05@gmail.com">Email</a> | 🐙 <a href="https://github.com/KGFCH2">GitHub</a>
-</p>
-
----
-
-> “💡 Data is the new oil, and analysis is the engine driving innovation.” 🚀
-
----
-
-## ✨ Show Some Love
-If you like this repo, give it a ⭐️ and fork it for your own learning!
-
----
