@@ -5,6 +5,11 @@ import sys
 def predict_csv(model_path, input_csv, out_csv="data/processed/predictions.csv"):
     model = joblib.load(model_path)
     df = pd.read_csv(input_csv)
+    
+    # If the input CSV has the target column (e.g. test.csv), drop it
+    if "Outcome" in df.columns:
+        df = df.drop(columns=["Outcome"])
+        
     preds = model.predict(df)
     probs = model.predict_proba(df)[:,1] if hasattr(model, "predict_proba") else None
     df["prediction"] = preds
