@@ -145,7 +145,7 @@ This repository documents my 6-month intensive data science training program. Ea
 
 <a id="part-5-6-month-5-6-final-project-and-portfolio-development"></a>
 ## 🚀 PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development
-**Link:** [PART 5 - 6](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART%205%20-%206)
+**Link:** [PART 5 & 6](https://github.com/KGFCH2/The-Developers-Arena/tree/main/PART_5_6)
 
 **Objectives:**
 - Complete an end-to-end data science project.
