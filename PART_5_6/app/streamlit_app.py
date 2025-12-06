@@ -9,6 +9,13 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
+# Set page configuration
+st.set_page_config(
+    page_title="Diabetes Prediction System",
+    page_icon="🏥",
+    layout="wide"
+)
+
 # Custom CSS for better styling
 st.markdown("""
 <style>
