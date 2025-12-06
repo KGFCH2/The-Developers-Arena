@@ -511,7 +511,7 @@ with tab3:
     st.markdown('<div style="text-align:center">\
      📧 Email: babinbid05@gmail.com<br>\
      📱 Phone: +91 9123777679<br>\
-     🌐 Website: \
+     🌐 Website: https://babin-portfolio.vercel.app/\
     </div>', unsafe_allow_html=True)
 # Footer
 st.markdown("---")
