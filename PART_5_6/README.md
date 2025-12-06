@@ -147,22 +147,22 @@ Docs at: `http://localhost:8000/docs`
 ## 🛠️ Technologies Used
 
 ### Core Technologies
-- **Python 3.10+**: Primary programming language for data science and web development.
-- **Scikit-Learn**: Machine learning library for Random Forest model training and evaluation.
-- **Pandas & NumPy**: Data manipulation and numerical computing.
-- **Matplotlib & Seaborn**: Static data visualizations.
-- **Plotly**: Interactive charts and 3D visualizations.
+- **🐍 Python 3.10+**: Primary programming language for data science and web development.
+- **🤖 Scikit-Learn**: Machine learning library for Random Forest model training and evaluation.
+- **📊 Pandas & NumPy**: Data manipulation and numerical computing.
+- **📈 Matplotlib & Seaborn**: Static data visualizations.
+- **📉 Plotly**: Interactive charts and 3D visualizations.
 
 ### Web Frameworks
-- **Streamlit**: Frontend web app for user interactions and real-time predictions.
-- **FastAPI**: High-performance REST API for backend services.
-- **HTML/CSS/JavaScript**: Portfolio website with animations and responsive design.
+- **🌟 Streamlit**: Frontend web app for user interactions and real-time predictions.
+- **⚡ FastAPI**: High-performance REST API for backend services.
+- **🌐 HTML/CSS/JavaScript**: Portfolio website with animations and responsive design.
 
 ### Deployment & Tools
-- **Streamlit Cloud**: Hosting for the diabetes prediction app.
-- **Vercel**: Hosting for the portfolio website.
-- **Joblib**: Model serialization and loading.
-- **Git & GitHub**: Version control and collaboration.
+- **☁️ Streamlit Cloud**: Hosting for the diabetes prediction app.
+- **🚀 Vercel**: Hosting for the portfolio website.
+- **💾 Joblib**: Model serialization and loading.
+- **🔧 Git & GitHub**: Version control and collaboration.
 
 ---
 
