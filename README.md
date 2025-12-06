@@ -13,7 +13,6 @@ Welcome to my comprehensive 6-month Data Science journey under The Developers Ar
 - [PART 4: Month 4 – Advanced Deep Learning and NLP](#part-4-month-4-advanced-deep-learning-and-nlp)
 - [PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development](#part-5-6-month-5-6-final-project-and-portfolio-development)
 - [Technologies Used](#technologies-used)
-- [How to Use This Repository](#how-to-use-this-repository)
 - [License](#license)
 
 <a id="about-me"></a>
@@ -174,25 +173,7 @@ This repository documents my 6-month intensive data science training program. Ea
 - **Version Control:** Git, GitHub
 - **Other Tools:** Jupyter Notebook, VS Code
 
-<a id="how-to-use-this-repository"></a>
-## 🚀 How to Use This Repository
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/KGFCH2/The-Developers-Arena.git
-   cd The-Developers-Arena
-   ```
-
-2. **Navigate to Specific Parts:**
-   - Each PART folder contains the respective week's code and deliverables.
-   - For PART 5, follow the setup instructions in `PART 5/SETUP_GUIDE.md`.
-
-3. **Run Individual Projects:**
-   - Check each folder's README or scripts for specific instructions.
-   - For the final project in PART 5, refer to `PART 5/README.md` for deployment details.
-
-4. **Contribute:**
-   - Feel free to fork and contribute improvements!
-   - Open issues for any questions or suggestions.
+---
 
 <a id="license"></a>
 ## 📄 License
@@ -201,3 +182,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Thank you for exploring my Data Science journey! Feel free to connect with me on LinkedIn or check out my other projects on GitHub. 🚀
+
+---
