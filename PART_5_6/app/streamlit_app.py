@@ -14,7 +14,7 @@ st.markdown("""
 <style>
     /* Modern Gradient Background */
     .stApp {
-        background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+        background: linear-gradient(to bottom right, #0e1117, #262730);
     }
     
     /* Glassmorphism Header */
@@ -31,14 +31,14 @@ st.markdown("""
     
     /* Card Styling */
     .metric-card {
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(30, 30, 30, 0.9);
         padding: 1.5rem;
         border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         text-align: center;
         transition: transform 0.3s ease;
-        border: 1px solid rgba(255,255,255,0.5);
-        color: #333;
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #fafafa;
     }
     .metric-card:hover {
         transform: translateY(-5px);
@@ -46,15 +46,16 @@ st.markdown("""
     
     /* Input Section Styling */
     .input-section {
-        background: white;
+        background: rgba(30, 30, 30, 0.9);
         padding: 2rem;
         border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         margin-bottom: 1rem;
-        color: #333;
+        color: #fafafa;
+        border: 1px solid rgba(255,255,255,0.1);
     }
     .input-section h4 {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     
     /* Custom Button */
@@ -83,28 +84,28 @@ st.markdown("""
     
     /* Sidebar styling */
     .stSidebar {
-        background: rgba(255, 255, 255, 0.95);
-        color: #333;
+        background: rgba(30, 30, 30, 0.95);
+        color: #fafafa;
     }
     .stSidebar [data-testid="stMarkdownContainer"] {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     .stSidebar p, .stSidebar h1, .stSidebar h2, .stSidebar h3, .stSidebar h4 {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     
     /* Global text visibility */
     [data-testid="stMarkdownContainer"] {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     .stMarkdown {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     label {
-        color: #333 !important;
+        color: #fafafa !important;
     }
     .stSlider label {
-        color: #333 !important;
+        color: #fafafa !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -238,12 +239,12 @@ with tab1:
                 mode = "gauge+number",
                 value = prob * 100,
                 domain = {'x': [0, 1], 'y': [0, 1]},
-                title = {'text': "Risk Probability", 'font': {'size': 24, 'color': "#333"}},
+                title = {'text': "Risk Probability", 'font': {'size': 24, 'color': "#fafafa"}},
                 number = {'suffix': "%", 'font': {'size': 40, 'weight': 'bold'}},
                 gauge = {
-                    'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "#333"},
+                    'axis': {'range': [None, 100], 'tickwidth': 1, 'tickcolor': "#fafafa"},
                     'bar': {'color': risk_color, 'thickness': 0.75},
-                    'bgcolor': "white",
+                    'bgcolor': "rgba(255,255,255,0.1)",
                     'borderwidth': 2,
                     'bordercolor': "#eee",
                     'steps': [
@@ -253,7 +254,7 @@ with tab1:
                     ],
                 }
             ))
-            fig_gauge.update_layout(height=300, margin=dict(l=20, r=20, t=50, b=20), paper_bgcolor='rgba(0,0,0,0)', font={'family': "Arial", 'color': '#333'})
+            fig_gauge.update_layout(height=300, margin=dict(l=20, r=20, t=50, b=20), paper_bgcolor='rgba(0,0,0,0)', font={'family': "Arial", 'color': '#fafafa'})
             st.plotly_chart(fig_gauge, use_container_width=True)
             
             # Result Text with Animation
@@ -284,9 +285,9 @@ with tab1:
                 color=normalized_values,
                 color_continuous_scale='Bluered'
             )
-            fig_imp.update_layout(showlegend=False, height=300, margin=dict(l=0, r=0, t=40, b=0), font={'color': '#333', 'size': 12})
-            fig_imp.update_xaxes(title_font=dict(color='#333'), tickfont=dict(color='#333'))
-            fig_imp.update_yaxes(title_font=dict(color='#333'), tickfont=dict(color='#333'))
+            fig_imp.update_layout(showlegend=False, height=300, margin=dict(l=0, r=0, t=40, b=0), font={'color': '#fafafa', 'size': 12})
+            fig_imp.update_xaxes(title_font=dict(color='#fafafa'), tickfont=dict(color='#fafafa'))
+            fig_imp.update_yaxes(title_font=dict(color='#fafafa'), tickfont=dict(color='#fafafa'))
             st.plotly_chart(fig_imp, use_container_width=True)
             
         else:
@@ -321,7 +322,7 @@ with tab2:
         title="Glucose vs BMI vs Age (3D Analysis)",
         labels={'Outcome': 'Diabetic Status'}
     )
-    fig_3d.update_layout(margin=dict(l=0, r=0, b=0, t=30), height=500, font={'color': '#333'})
+    fig_3d.update_layout(margin=dict(l=0, r=0, b=0, t=30), height=500, font={'color': '#fafafa'})
     st.plotly_chart(fig_3d, use_container_width=True)
 
     st.markdown("---")
@@ -352,11 +353,11 @@ with tab2:
         ))
         
         fig_radar.update_layout(
-            polar=dict(radialaxis=dict(visible=True, range=[0, 200], tickfont=dict(color='#333'))),
+            polar=dict(radialaxis=dict(visible=True, range=[0, 200], tickfont=dict(color='#fafafa'))),
             showlegend=True,
             height=400,
             margin=dict(l=40, r=40, t=20, b=20),
-            font={'color': '#333', 'size': 12}
+            font={'color': '#fafafa', 'size': 12}
         )
         st.plotly_chart(fig_radar, use_container_width=True)
 
@@ -376,9 +377,9 @@ with tab2:
             color_continuous_scale='Viridis',
             aspect="auto"
         )
-        fig_heat.update_layout(height=400, font={'color': '#333', 'size': 12})
-        fig_heat.update_xaxes(title_font=dict(color='#333'), tickfont=dict(color='#333'))
-        fig_heat.update_yaxes(title_font=dict(color='#333'), tickfont=dict(color='#333'))
+        fig_heat.update_layout(height=400, font={'color': '#fafafa', 'size': 12})
+        fig_heat.update_xaxes(title_font=dict(color='#fafafa'), tickfont=dict(color='#fafafa'))
+        fig_heat.update_yaxes(title_font=dict(color='#fafafa'), tickfont=dict(color='#fafafa'))
         st.plotly_chart(fig_heat, use_container_width=True)
 
     st.markdown("---")
@@ -421,7 +422,7 @@ with tab2:
                 'thickness': 0.75,
                 'value': 85}}))
     
-    fig_gauge.update_layout(height=300, font={'color': '#333'})
+    fig_gauge.update_layout(height=300, font={'color': '#fafafa'})
     st.plotly_chart(fig_gauge, use_container_width=True)
     
     if reduction > 0:
@@ -463,4 +464,4 @@ with tab3:
 
 # Footer
 st.markdown("---")
-st.markdown('<div style="text-align: center; color: #666; padding: 1rem;">© 2025 Diabetes Prediction System | Built with Streamlit & Machine Learning</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; color: #aaa; padding: 1rem;">© 2025 Diabetes Prediction System | Built with Streamlit & Machine Learning</div>', unsafe_allow_html=True)
