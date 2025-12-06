@@ -1,5 +1,5 @@
 <div align="center">
-<h1>The Developers Arena ~ 6-Month Data Science Journey</h1>
+<h1>The Developers Arena</h1>
 </div>
 
 <div align="center">
