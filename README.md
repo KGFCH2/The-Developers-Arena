@@ -1,5 +1,6 @@
-# The Developers Arena
-
+<div align="center">
+<h1>The Developers Arena</h1>
+</div>
 
 <div align="center">
 
