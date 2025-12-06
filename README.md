@@ -7,11 +7,11 @@ Welcome to my comprehensive 6-month Data Science journey under The Developers Ar
 ## 📋 Table of Contents
 - [About Me](#about-me)
 - [Project Overview](#project-overview)
-- [PART 1: Month 1 – Python Basics and Data Manipulation](#part-1-month-1--python-basics-and-data-manipulation)
-- [PART 2: Month 2 – Data Analysis and Statistical Methods](#part-2-month-2--data-analysis-and-statistical-methods)
-- [PART 3: Month 3 – Advanced Machine Learning](#part-3-month-3--advanced-machine-learning)
-- [PART 4: Month 4 – Advanced Deep Learning and NLP](#part-4-month-4--advanced-deep-learning-and-nlp)
-- [PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development](#part-5--6-month-5--6--final-project-and-portfolio-development)
+- [PART 1: Month 1 – Python Basics and Data Manipulation](#part-1-month-1-python-basics-and-data-manipulation)
+- [PART 2: Month 2 – Data Analysis and Statistical Methods](#part-2-month-2-data-analysis-and-statistical-methods)
+- [PART 3: Month 3 – Advanced Machine Learning](#part-3-month-3-advanced-machine-learning)
+- [PART 4: Month 4 – Advanced Deep Learning and NLP](#part-4-month-4-advanced-deep-learning-and-nlp)
+- [PART 5 & 6: Month 5 & 6 – Final Project and Portfolio Development](#part-5-6-month-5-6-final-project-and-portfolio-development)
 - [Technologies Used](#technologies-used)
 - [How to Use This Repository](#how-to-use-this-repository)
 - [License](#license)
@@ -174,6 +174,7 @@ This repository documents my 6-month intensive data science training program. Ea
 - **Version Control:** Git, GitHub
 - **Other Tools:** Jupyter Notebook, VS Code
 
+<a id="how-to-use-this-repository"></a>
 ## 🚀 How to Use This Repository
 1. **Clone the Repository:**
    ```bash
