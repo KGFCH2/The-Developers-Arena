@@ -1,9 +1,10 @@
 <div align="center">
 <h1>The Developers Arena ~ 6-Month Data Science Journey</h1>
-
 </div>
 
+<div align="center">
 ![Data Science Journey](https://img.shields.io/badge/Data%20Science-Journey-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXc... ) <!-- Placeholder for a relevant badge -->
+</div>
 
 Welcome to my comprehensive 6-month Data Science journey under The Developers Arena! This repository showcases my progression from Python basics to advanced deep learning, culminating in a full end-to-end data science project with deployment and portfolio creation.
 
