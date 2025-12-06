@@ -6,8 +6,22 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Live Demo](https://img.shields.io/badge/Live%20Demo-Diabetes%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Portfolio](https://img.shields.io/badge/Portfolio-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
-> Predict diabetes risk using Advanced Machine Learning!
+> Predict diabetes risk using Advanced Machine Learning! Powered by AI for accurate, real-time health insights. 🌟
+
+---
+
+## 🌐 Live Demos
+
+Experience the system in action! 🚀
+
+- **🩺 Diabetes Prediction App**: [https://new-diabetes-prediction.streamlit.app/](https://new-diabetes-prediction.streamlit.app/)  
+  Interactive web app for instant diabetes risk assessment using patient data.
+
+- **🎨 Portfolio Website**: [https://portfolio-sigma-two-y8yfx7btmc.vercel.app/](https://portfolio-sigma-two-y8yfx7btmc.vercel.app/)  
+  Showcase of projects, skills, and achievements in data science and web development.
 
 ---
 
@@ -19,28 +33,66 @@
 | Algorithm | Random Forest 🌲 |
 | Status | Ready to Use ✅ |
 | Deployment | Streamlit & FastAPI 🌐 |
+| Live Demos | Available Online 🌍 |
 
 ---
 
-## ⚡ Quick Start Guide
+## ⚡ Installation & Setup
 
-Get up and running in seconds!
+### Prerequisites
+- Python 3.10 or higher
+- pip package manager
+- Git (for cloning the repository)
 
+### Step-by-Step Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/KGFCH2/The-Developers-Arena.git
+   cd The-Developers-Arena/PART_5_6
+   ```
+
+2. **Create Virtual Environment** (Recommended)
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
+   source venv/bin/activate
+   ```
+
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Prepare Data & Train Model**
+   ```bash
+   # Clean and prepare data
+   python src/data_prep.py
+   
+   # Train the machine learning model
+   python src/train.py
+   
+   # Evaluate model performance
+   python src/evaluate.py
+   ```
+
+5. **Launch Applications**
+   ```bash
+   # Start Streamlit App
+   streamlit run app/streamlit_app.py
+   
+   # Or start FastAPI backend
+   uvicorn app.api:app --reload
+   ```
+
+### Docker Setup (Optional)
 ```bash
-# Step 1: Install dependencies
-pip install -r requirements.txt
-
-# Step 2: Prepare & Clean Data
-python src/data_prep.py
-
-# Step 3: Train the AI Model
-python src/train.py
-
-# Step 4: Launch the Web App
-python -m streamlit run app/streamlit_app.py
+# Build and run with Docker
+docker build -t diabetes-app .
+docker run -p 8501:8501 diabetes-app
 ```
-
-Open http://localhost:8501 - Enter patient data and get instant AI predictions! 🤖
 
 ---
 
@@ -59,6 +111,58 @@ High-performance API backend using FastAPI.
 python -m uvicorn app.api:app --reload
 ```
 Docs at: `http://localhost:8000/docs`
+
+---
+
+## ✨ Key Features
+
+- **🔮 Real-time Predictions**: Input patient data and get instant diabetes risk assessment with probability scores.
+- **📊 Interactive Dashboards**: Explore 3D visualizations, radar charts, and correlation heatmaps for deeper insights.
+- **🎯 High Accuracy**: 85.45% accuracy using Random Forest algorithm trained on 2,048 samples.
+- **🩺 Clinical Features**: Analyzes 8 key health metrics including glucose, BMI, age, and family history.
+- **🌐 Web Deployment**: Fully deployed on Streamlit Cloud and Vercel for global access.
+- **📱 Responsive Design**: Dark-mode friendly UI with glassmorphism effects and animations.
+- **🔧 Developer-Friendly**: REST API for integration, batch predictions, and model evaluation tools.
+- **📈 Advanced Analytics**: What-if simulator to see how lifestyle changes impact risk scores.
+- **🎨 Portfolio Showcase**: Professional portfolio website highlighting data science projects and skills.
+
+---
+
+## 📸 Screenshots
+
+### Diabetes Prediction App
+- **Prediction Interface**: User-friendly form for entering patient data with sliders and instant risk visualization.
+- **Analytics Dashboard**: 3D scatter plots, radar charts, and interactive heatmaps for data exploration.
+- **Risk Gauge**: Dynamic gauge showing probability with color-coded risk levels.
+
+### Portfolio Website
+- **Hero Section**: Animated introduction with glitch effects and floating statistics.
+- **Projects Showcase**: Glassmorphism cards with hover animations and project details.
+- **Skills & Timeline**: Interactive timeline of achievements and technical skills.
+
+*(Screenshots available in the `models/` and `portfolio/` directories)*
+
+---
+
+## 🛠️ Technologies Used
+
+### Core Technologies
+- **Python 3.10+**: Primary programming language for data science and web development.
+- **Scikit-Learn**: Machine learning library for Random Forest model training and evaluation.
+- **Pandas & NumPy**: Data manipulation and numerical computing.
+- **Matplotlib & Seaborn**: Static data visualizations.
+- **Plotly**: Interactive charts and 3D visualizations.
+
+### Web Frameworks
+- **Streamlit**: Frontend web app for user interactions and real-time predictions.
+- **FastAPI**: High-performance REST API for backend services.
+- **HTML/CSS/JavaScript**: Portfolio website with animations and responsive design.
+
+### Deployment & Tools
+- **Streamlit Cloud**: Hosting for the diabetes prediction app.
+- **Vercel**: Hosting for the portfolio website.
+- **Joblib**: Model serialization and loading.
+- **Git & GitHub**: Version control and collaboration.
 
 ---
 
@@ -150,15 +254,44 @@ PART_5_6/
 
 ---
 
-## 👨🏼‍💻 Author
+## 🚀 Future Enhancements
 
-**Babin Bid**  
-📧 babinbid05@gmail.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/babin-bid-853728293/) | [GitHub](https://github.com/KGFCH2)
+- **🔬 Advanced Models**: Integration of deep learning models (CNN, LSTM) for improved accuracy.
+- **📱 Mobile App**: Native mobile application for iOS and Android.
+- **🌍 Multi-language Support**: Localization for global users.
+- **🔒 Privacy Features**: Enhanced data privacy and GDPR compliance.
+- **📊 Real-time Monitoring**: Integration with wearable devices for continuous health tracking.
+- **🤝 Collaboration Tools**: Multi-user features for healthcare professionals.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+### Development Guidelines
+- Follow PEP 8 style guidelines
+- Add tests for new features
+- Update documentation
+- Ensure all tests pass
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](../LICENSE) file for details.
+
+The MIT License allows free use, modification, and distribution of the code, provided that the original copyright notice is included.
 
 ---
 
 <p align="center">
   <b>Made with ❤️ by Babin Bid</b><br>
-  <i>Last Updated: December 2025</i>
+  <i>Last Updated: December 6, 2025</i>
 </p>
