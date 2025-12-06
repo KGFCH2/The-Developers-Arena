@@ -4,7 +4,7 @@
 
 <div align="center">
 
-![Data Science Journey](https://img.shields.io/badge/Data%20Science-Journey-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXc... ) <!-- Placeholder for a relevant badge -->
+![Data Science Journey](https://img.shields.io/badge/6%20Months-Data%20Science-Journey-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXc... ) <!-- Placeholder for a relevant badge -->
 
 </div>
 
