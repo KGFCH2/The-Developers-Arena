@@ -12,6 +12,7 @@ jobs:
         run: |
           pwd
           ls -la
+          ls -R
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
