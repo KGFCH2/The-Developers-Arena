@@ -150,7 +150,7 @@ PART_5_6/
 
 ---
 
-## 👤 Author
+## 👨🏼‍💻 Author
 
 **Babin Bid**  
 📧 babinbid05@gmail.com  
