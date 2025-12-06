@@ -95,9 +95,12 @@ st.markdown('<div class="main-header"><h1>🏥 Diabetes Prediction System</h1><p
 
 # Load model
 try:
-    model = joblib.load("../models/final_model.joblib")
+    import os
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, "../models/final_model.joblib")
+    model = joblib.load(model_path)
 except FileNotFoundError:
-    st.error("Model file not found. Please run 'python src/train.py' first.")
+    st.error(f"Model file not found at {model_path}. Please run 'python src/train.py' first.")
     st.stop()
 
 # Create tabs for better organization
