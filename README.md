@@ -1,4 +1,5 @@
-# The Developers Arena : 6-Month Data Science Journey
+<div align="center"> #The Developers Arena
+<br>6-Month Data Science Journey</br> </div>
 
 ![Data Science Journey](https://img.shields.io/badge/Data%20Science-Journey-blue?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXc... ) <!-- Placeholder for a relevant badge -->
 
