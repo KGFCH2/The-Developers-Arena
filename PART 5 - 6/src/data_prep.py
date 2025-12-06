@@ -8,7 +8,11 @@ TARGET = "Outcome"
 
 MISSING_AS_ZERO = ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]
 
-def load_data(path="../data/raw/diabetes.csv"):
+def load_data(path=None):
+    if path is None:
+        # Robust path relative to this script
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(base_dir, "../data/raw/diabetes.csv")
     df = pd.read_csv(path)
     return df
 
@@ -27,7 +31,11 @@ def clean_and_feature_engineer(df):
     # Ensure consistent dtypes
     return df
 
-def split_save(df, out_dir="../data/processed", test_size=0.2, random_state=42):
+def split_save(df, out_dir=None, test_size=0.2, random_state=42):
+    if out_dir is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        out_dir = os.path.join(base_dir, "../data/processed")
+    
     os.makedirs(out_dir, exist_ok=True)
     # Drop rows with NaN in target variable
     df = df.dropna(subset=[TARGET])
@@ -36,8 +44,8 @@ def split_save(df, out_dir="../data/processed", test_size=0.2, random_state=42):
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=test_size, random_state=random_state, stratify=y
     )
-    train = pd.concat([X_train, y_train.reset_index(drop=True)], axis=1)
-    test = pd.concat([X_test, y_test.reset_index(drop=True)], axis=1)
+    train = pd.concat([X_train.reset_index(drop=True), y_train.reset_index(drop=True)], axis=1)
+    test = pd.concat([X_test.reset_index(drop=True), y_test.reset_index(drop=True)], axis=1)
     train.to_csv(os.path.join(out_dir, "train.csv"), index=False)
     test.to_csv(os.path.join(out_dir, "test.csv"), index=False)
     print(f"Saved processed train/test to {out_dir}")

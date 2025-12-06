@@ -14,7 +14,10 @@ from imblearn.pipeline import Pipeline as ImbPipeline
 
 TARGET = "Outcome"
 
-def load_train(path="../data/processed/train.csv"):
+def load_train(path=None):
+    if path is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        path = os.path.join(base_dir, "../data/processed/train.csv")
     return pd.read_csv(path)
 
 def build_pipeline(model):
@@ -30,7 +33,7 @@ def build_pipeline(model):
 def train_and_save(task_model="random_forest"):
     df = load_train()
     # Drop rows with any NaN values
-    df = df.dropna()
+    # df = df.dropna()  <-- REMOVED: Let the pipeline imputer handle missing values
     X = df.drop(columns=[TARGET])
     y = df[TARGET]
 
@@ -58,9 +61,12 @@ def train_and_save(task_model="random_forest"):
     print("Best params:", gs.best_params_)
     best = gs.best_estimator_
 
-    os.makedirs("../models", exist_ok=True)
-    joblib.dump(best, "../models/final_model.joblib")
-    print("Saved model to ../models/final_model.joblib")
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_dir = os.path.join(base_dir, "../models")
+    os.makedirs(model_dir, exist_ok=True)
+    model_path = os.path.join(model_dir, "final_model.joblib")
+    joblib.dump(best, model_path)
+    print(f"Saved model to {model_path}")
     return gs
 
 if __name__ == "__main__":

@@ -4,11 +4,15 @@ import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 TARGET = "Outcome"
 
-def create_prediction_visualization(X_sample, predictions, probabilities=None, save_path="../models/prediction_viz.png"):
+def create_prediction_visualization(X_sample, predictions, probabilities=None, save_path=None):
+    if save_path is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(base_dir, "../models/prediction_viz.png")
     """
     Create visualization for individual predictions
     """
@@ -43,7 +47,10 @@ def create_prediction_visualization(X_sample, predictions, probabilities=None, s
     print(f"✅ Prediction visualization saved to: {save_path}")
     return fig
 
-def create_feature_importance_viz(model, feature_names, save_path="../models/feature_importance.png"):
+def create_feature_importance_viz(model, feature_names, save_path=None):
+    if save_path is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(base_dir, "../models/feature_importance.png")
     """
     Create feature importance visualization
     """
@@ -80,7 +87,10 @@ def create_feature_importance_viz(model, feature_names, save_path="../models/fea
     print(f"✅ Feature importance saved to: {save_path}")
     return fig
 
-def create_data_distribution_viz(df, target_col=TARGET, save_path="../models/data_distribution.png"):
+def create_data_distribution_viz(df, target_col=TARGET, save_path=None):
+    if save_path is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        save_path = os.path.join(base_dir, "../models/data_distribution.png")
     """
     Create data distribution visualization
     """
@@ -117,9 +127,14 @@ def create_data_distribution_viz(df, target_col=TARGET, save_path="../models/dat
 if __name__ == "__main__":
     print("Generating visualizations...")
     
+    import os
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, "../models/final_model.joblib")
+    data_path = os.path.join(base_dir, "../data/processed/test.csv")
+    
     # Load model and data
-    model = joblib.load("../models/final_model.joblib")
-    df = pd.read_csv("../data/processed/test.csv")
+    model = joblib.load(model_path)
+    df = pd.read_csv(data_path)
     df = df.dropna()
     
     X = df.drop(columns=[TARGET])

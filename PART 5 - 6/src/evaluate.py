@@ -4,15 +4,22 @@ import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import os
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report, confusion_matrix, roc_curve
 
 TARGET = "Outcome"
 
-def evaluate(model_path="../models/final_model.joblib", test_path="../data/processed/test.csv", save_plots=True):
+def evaluate(model_path=None, test_path=None, save_plots=True):
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    if model_path is None:
+        model_path = os.path.join(base_dir, "../models/final_model.joblib")
+    if test_path is None:
+        test_path = os.path.join(base_dir, "../data/processed/test.csv")
+        
     model = joblib.load(model_path)
     df = pd.read_csv(test_path)
     # Drop rows with any NaN values
-    df = df.dropna()
+    # df = df.dropna() <-- REMOVED: Let the pipeline imputer handle missing values
     X = df.drop(columns=[TARGET])
     y = df[TARGET]
     preds = model.predict(X)
@@ -111,9 +118,11 @@ def evaluate(model_path="../models/final_model.joblib", test_path="../data/proce
         ax6.set_xlabel('Predicted Label')
         
         plt.tight_layout()
-        plt.savefig('../models/evaluation_report.png', dpi=300, bbox_inches='tight')
-        print("\n✅ Evaluation report saved to: ../models/evaluation_report.png")
-        plt.show()
+        
+        save_path = os.path.join(base_dir, "../models/evaluation_report.png")
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        print(f"\n✅ Evaluation report saved to: {save_path}")
+        # plt.show() # Commented out to avoid blocking execution in non-interactive environments
 
 if __name__ == "__main__":
     evaluate()

@@ -2,7 +2,13 @@
 import joblib
 import pandas as pd
 import sys
-def predict_csv(model_path, input_csv, out_csv="../data/processed/predictions.csv"):
+import os
+
+def predict_csv(model_path, input_csv, out_csv=None):
+    if out_csv is None:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        out_csv = os.path.join(base_dir, "../data/processed/predictions.csv")
+        
     model = joblib.load(model_path)
     df = pd.read_csv(input_csv)
     
