@@ -128,7 +128,7 @@ Docs at: `http://localhost:8000/docs`
 
 ---
 
-## 📸 Screenshots
+## 📸 At a Glance
 
 ### Diabetes Prediction App
 - **Prediction Interface**: User-friendly form for entering patient data with sliders and instant risk visualization.
@@ -170,33 +170,46 @@ Docs at: `http://localhost:8000/docs`
 
 ```
 PART_5_6/
-├── src/                   # 🐍 Python Scripts
-│   ├── data_prep.py       # 🧹 Data Cleaning
-│   ├── train.py           # 🧠 Model Training
-│   ├── evaluate.py        # 📊 Performance Report
-│   ├── predict.py         # 🔮 Batch Predictions
-│   └── visualize_results.py # 📈 Charts
+├── .gitignore              # 🛑 Git ignore rules
+├── Dockerfile              # 🐳 Docker configuration
+├── INSTRUCTIONS.md         # 📋 Instructions
+├── LICENSE                 # 📜 License file
+├── README.md               # 📖 You are here!
+├── requirements.txt        # 📦 Python dependencies
+├── run_portfolio.bat       # 🖥️ Portfolio runner script
+├── SETUP_GUIDE.md          # 🛠️ Setup guide
 │
-├── app/                   # 🌐 Web Apps
-│   ├── api.py             # ⚡ FastAPI Backend
-│   └── streamlit_app.py   # 🌟 Streamlit Frontend
+├── src/                    # 🐍 Python Scripts
+│   ├── data_prep.py        # 🧹 Data Cleaning
+│   ├── train.py            # 🧠 Model Training
+│   ├── evaluate.py         # 📊 Performance Report
+│   ├── predict.py          # 🔮 Batch Predictions
+│   ├── visualize_results.py # 📈 Charts
+│   └── __pycache__/        # 🗂️ Python cache
 │
-├── portfolio/             # 🎨 Showcase
-│   ├── index.html         # 🏠 Main Portfolio Page
-│   └── style.css          # 💅 Styling
+├── app/                    # 🌐 Web Apps
+│   ├── api.py              # ⚡ FastAPI Backend
+│   ├── streamlit_app.py    # 🌟 Streamlit Frontend
+│   └── __pycache__/        # 🗂️ Python cache
 │
-├── data/                  # 💾 Data
-│   ├── raw/diabetes.csv   # 📄 Raw Data
-│   └── processed/         # ⚙️ Ready-to-train Data
+├── portfolio/              # 🎨 Showcase
+│   ├── index.html          # 🏠 Main Portfolio Page
+│   └── style.css           # 💅 Styling
 │
-├── models/                # 🤖 Intelligence
-│   ├── final_model.joblib # 📦 Saved Model
-│   └── *.png              # 🖼️ Visual Insights
+├── data/                   # 💾 Data
+│   ├── raw/                # 📄 Raw Data
+│   │   └── diabetes.csv    # 🩸 Diabetes dataset
+│   └── processed/          # ⚙️ Ready-to-train Data
+│       ├── predictions.csv # 🔮 Prediction results
+│       ├── test.csv        # 🧪 Test data
+│       └── train.csv       # 🎓 Training data
 │
-└── Documentation
-    ├── README.md          # 📖 You are here!
-    ├── INSTRUCTIONS.md    # 🗺️ Detailed Map
-    └── SETUP_GUIDE.md     # 🛠️ Fix-it Guide
+├── models/                 # 🤖 Intelligence
+│   └── final_model.joblib  # 📦 Saved ML Model
+│
+├── report/                 # 📒 Report
+│   └── Final_report.md     # 📝 Final report documentation
+ 
 ```
 
 ---
@@ -276,7 +289,7 @@ We welcome contributions! Here's how you can help:
 5. Open a Pull Request
 
 ### Development Guidelines
-- Follow PEP 8 style guidelines
+- Follow PEP (Python Enhancement Proposal) 8 style guidelines
 - Add tests for new features
 - Update documentation
 - Ensure all tests pass
