@@ -436,39 +436,83 @@ with tab2:
         st.success(f"🎉 Great job! These changes could reduce your risk score by **{reduction:.1f} points**!")
 
 with tab3:
-    st.markdown("### ℹ️ About This System")
-    st.markdown("""
-    This diabetes prediction system uses machine learning to assess diabetes risk based on clinical parameters.
-    
-    **How it works:**
-    - Input 8 clinical features
-    - Random Forest model analyzes patterns
-    - Returns risk assessment with probability
-    
-    **Clinical Features Used:**
-    - Pregnancies, Glucose, Blood Pressure
-    - Skin Thickness, Insulin, BMI
-    - Diabetes Pedigree Function, Age
-    
-    **Model Performance:**
-    - Trained on 2,048 samples
-    - Tested on 512 samples
-    - 85.45% accuracy on test set
-    
-    **Important Notes:**
-    - This is a screening tool, not diagnostic
-    - Consult healthcare professional for medical advice
-    - Results should be interpreted by qualified medical personnel
-    """)
-    
-    st.markdown("### 📞 Contact & Support")
-    st.markdown("""
-    For technical support or questions:
-    - 📧 Email: support@diabetes-predictor.com
-    - 📱 Phone: +1 (555) 123-4567
-    - 🌐 Website: www.diabetes-predictor.com
-    """)
+    # Center the About header
+    st.markdown('<div style="text-align:center"><h2 style="margin-bottom:0.6rem;">ℹ️ About This System</h2></div>', unsafe_allow_html=True)
 
+    # Two rows with two boxes each — add margins so boxes keep gaps
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(
+            """
+            <div style="background: rgba(40,40,40,0.85); padding: 20px; border-radius: 12px; color: #fafafa; margin:8px;">
+                <h4 style="margin-top:0;">How it works</h4>
+                <ul>
+                    <li>Input 8 clinical features</li>
+                    <li>Random Forest model analyzes patterns</li>
+                    <li>Returns risk assessment with probability</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col2:
+        st.markdown(
+            """
+            <div style="background: rgba(40,40,40,0.85); padding: 20px; border-radius: 12px; color: #fafafa; margin:8px;">
+                <h4 style="margin-top:0;">Clinical Features Used</h4>
+                <ul>
+                    <li>Pregnancies, Glucose, Blood Pressure</li>
+                    <li>Skin Thickness, Insulin, BMI</li>
+                    <li>Diabetes Pedigree Function, Age</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    # vertical gap between rows
+    st.markdown("<div style='height:14px'></div>", unsafe_allow_html=True)
+
+    col3, col4 = st.columns(2)
+    with col3:
+        st.markdown(
+            """
+            <div style="background: rgba(40,40,40,0.85); padding: 20px; border-radius: 12px; color: #fafafa; margin:8px;">
+                <h4 style="margin-top:0;">Model Performance</h4>
+                <ul>
+                    <li>Trained on 2,048 samples</li>
+                    <li>Tested on 512 samples</li>
+                    <li><strong>85.45% accuracy</strong> on test set</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    with col4:
+        st.markdown(
+            """
+            <div style="background: rgba(40,40,40,0.85); padding: 20px; border-radius: 12px; color: #fafafa; margin:8px;">
+                <h4 style="margin-top:0;">Important Notes</h4>
+                <ul>
+                    <li>This is a screening tool, not diagnostic</li>
+                    <li>Consult healthcare professional for medical advice</li>
+                    <li>Results should be interpreted by qualified medical personnel</li>
+                </ul>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+    
+    # Center the Contact header
+    st.markdown('<div style="text-align:center"><h2 style="margin-bottom:0.4rem;">📞 Contact & Support</h2></div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center"><h4 style="margin-bottom:0.4rem;">For technical support or questions:</h4></div>', unsafe_allow_html=True)
+    st.markdown('<div style="text-align:center">\
+     📧 Email: babinbid05@gmail.com<br>\
+     📱 Phone: +91 9123777679<br>\
+     🌐 Website: \
+    </div>', unsafe_allow_html=True)
 # Footer
 st.markdown("---")
 st.markdown('<div style="text-align: center; color: #aaa; padding: 1rem;">© 2025 Diabetes Prediction System | Built with Streamlit & Machine Learning</div>', unsafe_allow_html=True)
