@@ -49,7 +49,7 @@ If not installed, download from https://www.python.org/downloads/
 
 ### Step 2: Navigate to Project Folder
 ```bash
-cd path/to/PART 5
+cd path/to/PART 5 - 6
 ```
 
 ### Step 3: Create Virtual Environment (Optional)
