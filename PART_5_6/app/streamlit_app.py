@@ -515,4 +515,4 @@ with tab3:
     </div>', unsafe_allow_html=True)
 # Footer
 st.markdown("---")
-st.markdown('<div style="text-align: center; color: #aaa; padding: 1rem;">© 2025 Diabetes Prediction System | Built with Streamlit & Machine Learning</div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; color: #aaa; padding: 1rem;">© 2025 Diabetes Prediction System by <b>Babin Bid</b> | Built with Streamlit & Machine Learning</div>', unsafe_allow_html=True)
