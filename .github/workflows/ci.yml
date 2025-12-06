@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: 'PART 5'
+        working-directory: 'PART 5 - 6'
     steps:
       - uses: actions/checkout@v4
       - name: Show working directory
