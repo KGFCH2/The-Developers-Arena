@@ -1548,6 +1548,21 @@ section:hover .section-header h2::after {
         width: 100%;
         padding: 0.9rem 1rem;
     }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-item.location {
+        grid-column: auto;
+        justify-self: auto;
+        max-width: none;
+    }
 }
 
 /* Desktop adjustments for final project card */
